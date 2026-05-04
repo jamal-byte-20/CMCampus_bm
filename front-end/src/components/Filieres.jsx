@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+
+
 const filieres = [
   {
     title: "Développement Digital",
@@ -25,9 +29,10 @@ const filieres = [
   },
 ];
 
+
 export default function Filieres() {
   return (
-    <section className="bg-gray-50 py-24">
+    <section className="bg-gray-50 py-24" id="filiers">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Title */}
