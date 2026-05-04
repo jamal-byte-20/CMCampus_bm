@@ -5,10 +5,10 @@ export default function Navbar() {
         <h1 className="text-2xl font-bold text-blue-600">CMCampus</h1>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="#stats">Blogs</a>
-          <a href="#">Lessons</a>
+          <Link to="/">Home</Link>
+          <Link to='/about'>About</Link>
+          <Link to='/blogs'>Blogs</Link>
+          <Link to='/lessons'>Lessons</Link>
         </nav>
 
         <button className="bg-blue-600 text-white px-5 py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition">
