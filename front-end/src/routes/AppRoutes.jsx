@@ -5,10 +5,13 @@ import About from "../pages/About";
 import Lessons from "../pages/Lessons";
 
 import Filieres from "../pages/Filieres";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function AppRoutes() {
   return (
     <>
+    <Navbar/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/blogs" element={<Blogs />} />
@@ -16,6 +19,7 @@ export default function AppRoutes() {
       <Route path="/lessons" element={<Lessons />} />
       <Route path="/filieres" element={<Filieres />} />
     </Routes>
+    <Footer/>
     </>
   );
 }
