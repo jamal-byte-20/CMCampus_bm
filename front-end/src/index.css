@@ -1,27 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
 @import "tailwindcss";
-body{
-  font-family: "Inter", sans-serif;
+
+@theme {
+  --color-cmc-cyan: #2b9cb8;
+  --color-cmc-cyan-dark: #1f7f96;
+  --color-cmc-gray: #a3a3a3;
+  --color-cmc-dark: #0f172a;
+  --color-cmc-light: #f8fafc;
+
+  --font-sans: "Inter", sans-serif;
+  --font-arabic: "Cairo", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+
+  --shadow-soft: 0 12px 35px rgba(43, 156, 184, 0.15);
+  --radius-card: 22px;
 }
 
-:root {
-  /* Primary Colors */
-  --color-primary: #00A7C7;
-  --color-primary-dark: #005F73;
+@layer base {
+  body {
+    background: var(--color-cmc-light);
+    color: var(--color-cmc-dark);
+    font-family: var(--font-sans);
+  }
+}
 
-  /* Text Colors */
-  --color-text: #2B2B2B;
-  --color-text-light: #6B7280;
+@layer components {
+  .btn-primary {
+    @apply bg-cmc-cyan text-white px-6 py-3 rounded-xl font-semibold shadow-soft hover:bg-cmc-cyan-dark transition;
+  }
 
-  /* Gray / Borders */
-  --color-gray: #BDBDBD;
-  --color-gray-light: #E5E7EB;
+  .card {
+    @apply bg-white rounded-card shadow-soft border border-cmc-gray/20 p-6;
+  }
 
-  /* Background */
-  --color-white: #FFFFFF;
-  --color-bg: #F8FAFC;
-
-  /* Status Colors (optional for dashboard later) */
-  --color-success: #22C55E;
-  --color-warning: #F59E0B;
-  --color-danger: #EF4444;
+  .section-title {
+    @apply text-3xl md:text-4xl font-heading font-bold text-cmc-dark;
+  }
 }
