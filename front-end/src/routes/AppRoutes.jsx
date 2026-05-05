@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 export default function AppRoutes() {
   return (
-    <>
+    <div className="bg-gray-100">
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home />} />
@@ -20,6 +20,6 @@ export default function AppRoutes() {
       <Route path="/filieres" element={<Filieres />} />
     </Routes>
     <Footer/>
-    </>
+    </div>
   );
 }

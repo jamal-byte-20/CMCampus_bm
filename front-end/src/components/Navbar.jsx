@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function Navbar(){
-    return <header className="bg-white shadow-sm sticky top-0 z-50">
+    return <header className="sticky top-0 z-50 pt-3">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
@@ -11,17 +11,17 @@ export default function Navbar(){
 
         {/* Links */}
         <nav className="hidden md:flex gap-8 text-gray-700 font-medium">
-          <Link to="/" className="hover:text-cmc-cyan-dark">Home</Link>
-          <Link to="/about" className="hover:text-cmc-cyan-dark">About</Link>
-          <Link to="/courses" className="hover:text-cmc-cyan-dark">Courses</Link>
-          <Link to="/filieres" className="hover:text-cmc-cyan-dark">Filieres</Link>
-          <Link to="/blogs" className="hover:text-cmc-cyan-dark">Blogs</Link>
+          <Link to="/" className="hover:text-red-400">Home</Link>
+          <Link to="/about" className="hover:text-red-400">About</Link>
+          <Link to="/courses" className="hover:text-red-400">Courses</Link>
+          <Link to="/filieres" className="hover:text-red-400">Filieres</Link>
+          <Link to="/blogs" className="hover:text-red-400 ">Blogs</Link>
         </nav>
 
         {/* Button */}
         <Link
           to="/login"
-          className="bg-cmc-cyan text-white px-5 py-2 rounded-lg hover:bg-cmc-cyan-dark transition"
+          className="bg-cmc-cyan-dark text-white px-5 py-2 rounded-lg hover:bg-cmc-cyan-dark transition"
         >
           Login
         </Link>

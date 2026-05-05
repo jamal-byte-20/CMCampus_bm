@@ -1,20 +1,21 @@
 export default function Home() {
   return (
-    <section className="bg-gray-50 min-h-screen flex items-center">
+    <section className=" min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
         {/* Text */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Build Your Future at CMC Beni Mellal
+          <span className="badge bg-red-400 text-white px-4 py-2 rounded-full" >OFPPT • CMC Beni Mellal</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mt-5">
+            Build Your Future at <span className="text-red-400">CMC</span> Beni Mellal
           </h1>
 
           <p className="mt-4 text-gray-600">
-            A professional training center offering practical programs to help stagiaires gain real-world skills and prepare for the job market.
+            A vocational training center under OFPPT offering practical programs to help stagiaires gain real-world skills and prepare for the job market.
           </p>
 
           <div className="mt-6 flex gap-4">
-            <button className="bg-cmc-cyan text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+            <button className="bg-cmc-cyan-dark text-white px-6 py-3 rounded-lg hover:bg-blue-700">
               Explore Filières
             </button>
 
@@ -25,7 +26,7 @@ export default function Home() {
         </div>
 
         {/* Image */}
-        <div className="">
+        <div className=" flex items-center justify-center">
           <img
             src="../static/pictures/cmc-hero.png"
             alt="education"
