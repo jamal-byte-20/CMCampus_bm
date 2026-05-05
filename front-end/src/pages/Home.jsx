@@ -15,7 +15,7 @@ export default function Home() {
           </p>
 
           <div className="mt-6 flex gap-4">
-            <button className="bg-cmc-cyan-dark text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+            <button className="bg-cmc-cyan-dark text-white px-6 py-3 rounded-lg hover:translate-y-[-2px] transition-all">
               Explore Filières
             </button>
 
