@@ -61,7 +61,7 @@ export default function PopularFilieres() {
               key={filiere.title}
               className="group rounded-3xl border border-gray-200 bg-white p-7 transition hover:-translate-y-2 hover:shadow-xl"
             >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#00A7C7]/10 text-3xl">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-3xl">
                 {filiere.icon}
               </div>
 
