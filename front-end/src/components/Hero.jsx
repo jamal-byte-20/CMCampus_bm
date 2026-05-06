@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero(){
     return <section className=" min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
@@ -15,7 +17,7 @@ export default function Hero(){
 
           <div className="mt-6 flex gap-4">
             <button className="bg-[var(--color-bg-dark)] text-white px-6 py-3 rounded-lg hover:translate-y-[-2px] transition-all">
-              Explore Filières
+              <Link to="/filieres">Explore Filières</Link>
             </button>
 
             <button className="border px-6 py-3 rounded-lg">

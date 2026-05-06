@@ -1,5 +1,7 @@
 // src/components/FilieresHero.jsx
 
+import { Link } from "react-router-dom";
+
 export default function FilieresHero() {
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(-90deg,#EAE8F1,#DDEDFE)] text-black rounded-2xl">
@@ -31,11 +33,11 @@ export default function FilieresHero() {
           <div className="mt-10 flex flex-wrap gap-4">
             
             <button className="rounded-xl bg-bg-dark px-7 py-3 font-semibold text-[#fff] transition hover:scale-95">
-              Explore Programs
+              <Link to="/courses">Explore Programs</Link>
             </button>
 
             <button className="rounded-xl border border-black px-7 py-3 font-semibold transition hover:bg-white">
-              Contact Us
+              <Link to="/contact">Contact Us</Link>
             </button>
 
           </div>
