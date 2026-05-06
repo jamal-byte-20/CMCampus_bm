@@ -73,6 +73,61 @@
 
 
 
+  /* === SECONDARY (Blue support) === */
+  --color-secondary-100: #dbe4ff;
+  --color-secondary-300: #7f9cff;
+  --color-secondary-500: #274dea;
+  --color-secondary-700: #001474;
+
+  /* === TERTIARY (Purple accent support) === */
+  --color-tertiary-500: #6338ee;
+
+  /* === ACCENT (Yellow-Green / Success / Highlight) === */
+  --color-accent-100: #eaf6ad;
+  --color-accent-300: #d4ec5f;
+  --color-accent-500: #b6db00;
+  --color-accent-700: #a1c500;
+
+  /* === NEUTRAL (Grays) === */
+  --color-neutral-50:  #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #a3a3a3;
+  --color-neutral-500: #64748b;
+  --color-neutral-700: #334155;
+  --color-neutral-900: #0f172a;
+
+
+  /* =========================
+     SEMANTIC TOKENS
+     (USED IN UI)
+     ========================= */
+
+  /* Backgrounds */
+  --color-bg-primary: var(--color-neutral-50);
+  --color-bg-secondary: var(--color-neutral-100);
+  --color-bg-dark: var(--color-neutral-900);
+
+  /* Text */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-500);
+  --color-text-inverse: var(--color-neutral-50);
+
+  /* Brand */
+  --color-brand: var(--color-primary-500);
+  --color-brand-hover: var(--color-primary-600);
+  --color-brand-active: var(--color-primary-700);
+
+  /* Borders */
+  --color-border: var(--color-neutral-200);
+
+  /* States */
+  --color-success: var(--color-accent-500);
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: var(--color-secondary-500);
+
+  
   --font-sans: "Inter", sans-serif;
   --font-arabic: "Cairo", sans-serif;
   --font-heading: "Poppins", sans-serif;
@@ -86,6 +141,7 @@
     background: var(--color-neutral-50);
     color: var(--color-neutral-900);
     font-family: var(--font-sans);
+
   }
 }
 
