@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#2B2B2B] text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-bg-dark text-gray-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         
         {/* Logo + About */}
         <div>
