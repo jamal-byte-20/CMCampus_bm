@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import SingleCour from "../components/SingleCour";
 import CourFilter from "../components/CourFilter";
+import PageHeader from "../components/PageHeader";
 
 const modules = [
   {
@@ -138,9 +139,7 @@ export default function Courses() {
 
   return (
     <main className="flex flex-col gap-10 justify-center items-center bg-white pb-7">
-        <section className="h-[150px] bg-[linear-gradient(90deg,#FCE0DE,#DDEDFE)] w-full text-center flex items-center justify-center">
-            <h1 className="font-bold text-3xl">CMC Courses</h1>
-        </section>
+        <PageHeader title="Courses"/>
         <CourFilter
             handlePoleChange={handlePoleChange}
             setSearch={setSearch}
