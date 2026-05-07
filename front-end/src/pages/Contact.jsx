@@ -39,7 +39,7 @@ export default function Contact() {
           {contactDetails.map((item) => (
             <div 
               key={item.id} 
-              className="flex items-center gap-5 p-8 border border-neutral-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="flex items-center gap-5 p-8 border border-neutral-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-700"
             >
               {/* Icon Box */}
               <div className="flex-shrink-0 w-16 h-16 bg-secondary-700 rounded-2xl flex items-center justify-center shadow-lg shadow-secondary-300/40">

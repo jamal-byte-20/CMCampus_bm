@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="flex w-full lg:w-auto flex-col sm:flex-row gap-4">
             <Link 
               to="/login" 
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold bg-brand text-white hover:bg-brand-hover hover:shadow-brand transition-all duration-300 group"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold bg-brand text-white hover:bg-brand-hover hover:shadow-brand transition-all duration-700 group"
             >
               Start Learning Today
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -59,9 +59,10 @@ export default function Footer() {
           <ul className="flex flex-col gap-4 text-sm">
             <FooterItem><FooterLink to="/">Home</FooterLink></FooterItem>
             <FooterItem><FooterLink to="/about">About Us</FooterLink></FooterItem>
+            <FooterItem><FooterLink to="/courses">Courses</FooterLink></FooterItem>
             <FooterItem><FooterLink to="/filieres">Filières</FooterLink></FooterItem>
             <FooterItem><FooterLink to="/blogs">Blogs</FooterLink></FooterItem>
-            <FooterItem><FooterLink to="/courses">Courses</FooterLink></FooterItem>
+            <FooterItem><FooterLink to="/contact">Contact</FooterLink></FooterItem>
           </ul>
         </div>
 
@@ -117,7 +118,7 @@ const FooterLink = ({ to, children }) => (
   <li>
     <Link 
       to={to} 
-      className="text-secondary-200 hover:text-ui-vibrant hover:translate-x-1 transition-all duration-300 inline-block"
+      className="text-secondary-200 hover:text-ui-vibrant hover:translate-x-1 transition-all duration-700 inline-block"
     >
       {children}
     </Link>
@@ -127,8 +128,8 @@ const FooterLink = ({ to, children }) => (
 // Sub-component for non-link list items
 const FooterItem = ({ children }) => (
   <li className="text-secondary-200 flex items-center gap-2 group cursor-default">
-    <div className="w-1.5 h-1.5 rounded-full bg-secondary-700 group-hover:bg-ui-vibrant transition-colors duration-300"></div>
-    <span className="group-hover:text-white transition-colors duration-300">{children}</span>
+    <div className="w-1.5 h-1.5 rounded-full bg-secondary-700 group-hover:bg-ui-vibrant transition-colors duration-700"></div>
+    <span className="group-hover:text-white transition-colors duration-700">{children}</span>
   </li>
 );
 
@@ -139,7 +140,7 @@ const SocialIcon = ({ href, icon, label }) => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="w-10 h-10 rounded-full bg-secondary-800 border border-secondary-700 flex items-center justify-center text-secondary-200 hover:bg-brand hover:border-brand hover:text-white hover:shadow-brand hover:-translate-y-1 transition-all duration-300"
+    className="w-10 h-10 rounded-full bg-secondary-800 border border-secondary-700 flex items-center justify-center text-secondary-200 hover:bg-brand hover:border-brand hover:text-white hover:shadow-brand hover:-translate-y-1 transition-all duration-700"
   >
     {icon}
   </a>
