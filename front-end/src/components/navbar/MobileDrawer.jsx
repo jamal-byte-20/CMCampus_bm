@@ -53,7 +53,7 @@ export default function MobileMenu({ isOpen, onClose, items }) {
           className="
             flex items-center justify-center gap-2 
             px-5 py-3 sm:mx-auto sm:w-[40%] rounded-full
-            bg-accent-500 text-neutral-900 font-semibold
+            bg-accent-500 text-gray-200 font-semibold
             hover:bg-accent-700 transition-colors
           "
         >
