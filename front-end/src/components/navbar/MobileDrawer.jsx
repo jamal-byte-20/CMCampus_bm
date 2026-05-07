@@ -13,7 +13,7 @@ export default function MobileMenu({ isOpen, onClose, items }) {
         absolute top-full left-0 w-full
         bg-white shadow-xl border-t border-neutral-200
         overflow-hidden lg:hidden
-        transition-all duration-300 ease-in-out origin-top
+        transition-all duration-700 ease-in-out origin-top
         ${isOpen
           ? 'translate-y-0 opacity-100 pointer-events-auto'
           : '-translate-y-full opacity-0 pointer-events-none'
