@@ -477,7 +477,7 @@ export default function BlogDetails() {
             disabled={isFormEmpty}
             className={`
               inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm sm:text-base
-              transition-all duration-300 ease-out
+              transition-all duration-700 ease-out
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
               ${isFormEmpty
                 ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'

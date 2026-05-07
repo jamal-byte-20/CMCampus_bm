@@ -413,7 +413,7 @@ export default function About() {
                   
                   {/* Accordion Content */}
                   <div 
-                    className={`px-4 sm:px-6 text-neutral-500 text-sm sm:text-base leading-relaxed transition-all duration-300 overflow-hidden ${
+                    className={`px-4 sm:px-6 text-neutral-500 text-sm sm:text-base leading-relaxed transition-all duration-700 overflow-hidden ${
                       activeIndex === index ? 'max-h-40 opacity-100 pb-6' : 'max-h-0 opacity-0 pb-0'
                     }`}
                   >

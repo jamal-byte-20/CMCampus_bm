@@ -74,7 +74,7 @@ export default function Navbar() {
       role="banner"
       className={`
         fixed w-full top-0 z-50
-        transition-all duration-300 ease-in-out
+        transition-all duration-700 ease-in-out 
         ${isVisible ? 'translate-y-0' : '-translate-y-full'}
       `}
     >
@@ -82,21 +82,21 @@ export default function Navbar() {
       <div
         className={`
           relative z-10
-          transition-all duration-300 ease-in-out
+          transition-all duration-700 ease-in-out
           ${isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md py-3'
-            : 'bg-white shadow-md py-5'
+            ? 'bg-white/95 backdrop-blur-md shadow-md py-1'
+            : 'bg-white shadow-md py-2'
           }
         `}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
 
         {/* ── Logo ── */}
-        <Logo className="w-50 sm:w-60 lg:w-80 -ml-8"/>
+        <Logo className="w-40 sm:w-50"/>
 
         {/* ── Desktop Navigation ── */}
         <nav
-          className="hidden lg:flex font-display text-md gap-3 items-center"
+          className="hidden lg:flex font-sans text-md gap-3 items-center"
           role="menubar"
           aria-label="Main navigation"
         >
@@ -113,7 +113,7 @@ export default function Navbar() {
               hidden lg:flex items-center gap-2
               px-5 py-2 rounded-full
               bg-accent-500 text-gray-200 font-medium
-              hover:bg-accent-700 transition-colors duration-300
+              hover:bg-accent-700 transition-colors duration-700
             "
           >
             <User className="w-5 h-5" />

@@ -41,7 +41,7 @@ const AuthLayout = () => {
         
         {/* Header - Logo and Back Link */}
         <div className="flex justify-between items-center mb-16">
-          <Logo />
+          <Logo className='w-40 sm:w-50 '/>
           <Link to="/" className="text-sm font-medium text-brand hover:underline">Back to Home</Link>
         </div>
 
