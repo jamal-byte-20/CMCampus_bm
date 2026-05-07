@@ -92,11 +92,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
 
         {/* ── Logo ── */}
-        <Logo />
+        <Logo className="w-50 sm:w-60 lg:w-80 -ml-8"/>
 
         {/* ── Desktop Navigation ── */}
         <nav
-          className="hidden lg:flex font-mono text-md gap-3 items-center"
+          className="hidden lg:flex font-display text-md gap-3 items-center"
           role="menubar"
           aria-label="Main navigation"
         >
@@ -112,7 +112,7 @@ export default function Navbar() {
             className="
               hidden lg:flex items-center gap-2
               px-5 py-2 rounded-full
-              bg-accent-500 text-neutral-900 font-medium
+              bg-accent-500 text-gray-200 font-medium
               hover:bg-accent-700 transition-colors duration-300
             "
           >

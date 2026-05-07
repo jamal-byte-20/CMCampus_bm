@@ -3,137 +3,113 @@
 @import "tailwindcss";
 
 @theme {
-   /* === PRIMARY (Brand: Cyan) === */
+  /* === PRIMARY (Brand: Cyan) - PRESERVED === */
   --color-primary-50:  #e6f6fa;
   --color-primary-100: #ccecf5;
   --color-primary-200: #99d9eb;
   --color-primary-300: #66c6e0;
   --color-primary-400: #3fb3d3;
-  --color-primary-500: #2b9cb8; /* MAIN */
+  --color-primary-500: #2b9cb8; /* MAIN BRAND COLOR */
   --color-primary-600: #258aa3;
   --color-primary-700: #1f7f96;
   --color-primary-800: #176070;
   --color-primary-900: #0f414a;
 
-  /* === SECONDARY (Blue support) === */
-  --color-secondary-100: #dbe4ff;
-  --color-secondary-300: #7f9cff;
-  --color-secondary-500: #274dea;
-  --color-secondary-700: #001474;
+  /* === SECONDARY (Petroleum / Deep Structure) === */
+  --color-secondary-50:  #e0eff1;
+  --color-secondary-100: #b3d1d6;
+  --color-secondary-200: #80b0b8;
+  --color-secondary-300: #4d8e9a;
+  --color-secondary-400: #267482;
+  --color-secondary-500: #005461; /* MAIN SECONDARY */
+  --color-secondary-600: #004d59;
+  --color-secondary-700: #00434f;
+  --color-secondary-800: #003a45;
+  --color-secondary-900: #002a33;
 
-  /* === TERTIARY (Purple accent support) === */
-  --color-tertiary-500: #6338ee;
+  /* === ACCENT (Medium Teal) === */
+  --color-accent-50:  #e1f1f2;
+  --color-accent-100: #b3dbde;
+  --color-accent-200: #81c4c8;
+  --color-accent-300: #4dadb2;
+  --color-accent-400: #279ca1;
+  --color-accent-500: #018790; /* MAIN ACCENT */
+  --color-accent-600: #017f88;
+  --color-accent-700: #01747d;
+  --color-accent-800: #016a73;
+  --color-accent-900: #00575f;
 
-  /* === ACCENT (Yellow-Green / Success / Highlight) === */
-  --color-accent-100: #eaf6ad;
-  --color-accent-300: #d4ec5f;
-  --color-accent-500: #b6db00;
-  --color-accent-700: #a1c500;
+  /* === VIBRANT (Bright Teal) === */
+  --color-vibrant-50:  #e0f7f7;
+  --color-vibrant-100: #b3ecea;
+  --color-vibrant-200: #80e0dc;
+  --color-vibrant-300: #4dd4cf;
+  --color-vibrant-400: #26cbc5;
+  --color-vibrant-500: #00B7B5; /* INTERACTIVE HIGHLIGHTS */
+  --color-vibrant-600: #00a8a6;
+  --color-vibrant-700: #009695;
+  --color-vibrant-800: #008583;
+  --color-vibrant-900: #006665;
 
-  /* === NEUTRAL (Grays) === */
-  --color-neutral-50:  #f8fafc;
-  --color-neutral-100: #f1f5f9;
-  --color-neutral-200: #e2e8f0;
-  --color-neutral-300: #a3a3a3;
-  --color-neutral-500: #64748b;
-  --color-neutral-700: #334155;
-  --color-neutral-900: #0f172a;
-
-
-  /* =========================
-     SEMANTIC TOKENS
-     (USED IN UI)
-     ========================= */
-
-  /* Backgrounds */
-  --color-bg-primary: var(--color-neutral-50);
-  --color-bg-secondary: var(--color-neutral-100);
-  --color-bg-dark: var(--color-neutral-900);
-
-  /* Text */
-  --color-text-primary: var(--color-neutral-900);
-  --color-text-secondary: var(--color-neutral-500);
-  --color-text-inverse: var(--color-neutral-50);
-
-  /* Brand */
-  --color-brand: var(--color-primary-500);
-  --color-brand-hover: var(--color-primary-600);
-  --color-brand-active: var(--color-primary-700);
-
-  /* Borders */
-  --color-border: var(--color-neutral-200);
-
-  /* States */
-  --color-success: var(--color-accent-500);
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-info: var(--color-secondary-500);
-
-
-
-
-
-  /* === SECONDARY (Blue support) === */
-  --color-secondary-100: #dbe4ff;
-  --color-secondary-300: #7f9cff;
-  --color-secondary-500: #274dea;
-  --color-secondary-700: #001474;
-
-  /* === TERTIARY (Purple accent support) === */
-  --color-tertiary-500: #6338ee;
-
-  /* === ACCENT (Yellow-Green / Success / Highlight) === */
-  --color-accent-100: #eaf6ad;
-  --color-accent-300: #d4ec5f;
-  --color-accent-500: #b6db00;
-  --color-accent-700: #a1c500;
-
-  /* === NEUTRAL (Grays) === */
-  --color-neutral-50:  #f8fafc;
-  --color-neutral-100: #f1f5f9;
-  --color-neutral-200: #e2e8f0;
-  --color-neutral-300: #a3a3a3;
-  --color-neutral-500: #64748b;
-  --color-neutral-700: #334155;
-  --color-neutral-900: #0f172a;
-
+  /* === NEUTRAL (Grays & Surfaces) === */
+  --color-neutral-50:  #F4F4F4; /* BASE SURFACE */
+  --color-neutral-100: #ececec;
+  --color-neutral-200: #e2e2e2;
+  --color-neutral-300: #cfcfcf;
+  --color-neutral-400: #a1a1a1;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
 
   /* =========================
      SEMANTIC TOKENS
-     (USED IN UI)
      ========================= */
 
-  /* Backgrounds */
+  /* Surface & Backgrounds */
   --color-bg-primary: var(--color-neutral-50);
-  --color-bg-secondary: var(--color-neutral-100);
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: var(--color-neutral-100);
+  --color-bg-deep: var(--color-secondary-500); /* Darker structural elements */
   --color-bg-dark: var(--color-neutral-900);
 
-  /* Text */
+  /* Text Hierarchy */
   --color-text-primary: var(--color-neutral-900);
-  --color-text-secondary: var(--color-neutral-500);
-  --color-text-inverse: var(--color-neutral-50);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-text-muted: var(--color-neutral-400);
+  --color-text-inverse: #ffffff;
+  --color-text-brand: var(--color-primary-600);
 
-  /* Brand */
+  /* Brand Interactive */
   --color-brand: var(--color-primary-500);
   --color-brand-hover: var(--color-primary-600);
   --color-brand-active: var(--color-primary-700);
-
-  /* Borders */
-  --color-border: var(--color-neutral-200);
-
-  /* States */
-  --color-success: var(--color-accent-500);
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-info: var(--color-secondary-500);
-
   
+  /* Accent Interactive */
+  --color-ui-accent: var(--color-accent-500);
+  --color-ui-vibrant: var(--color-vibrant-500);
+
+  /* Borders & Dividers */
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-300);
+
+  /* States */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: var(--color-accent-500);
+
+  /* Typography */
   --font-sans: "Inter", sans-serif;
   --font-arabic: "Cairo", sans-serif;
   --font-heading: "Poppins", sans-serif;
 
-  --shadow-soft: 0 12px 35px rgba(43, 156, 184, 0.15);
-  --radius-card: 22px;
+  /* Components */
+  --shadow-soft: 0 12px 35px rgba(0, 84, 97, 0.1);
+  --shadow-brand: 0 12px 35px rgba(43, 156, 184, 0.15);
+  --radius-card: 16px;
+  --radius-button: 8px;
 }
 
 @layer base {

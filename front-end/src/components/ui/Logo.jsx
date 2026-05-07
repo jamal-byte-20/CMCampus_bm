@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import LogoImg from '../../assets/images/logo/logo.png';
+
 /**
  * Logo component displaying the brand name.
  * 
@@ -12,8 +14,7 @@ const Logo = ({ className = '' }) => {
   return (
     <h1 className={`text-2xl sm:text-3xl font-bold shrink-0 ${className}`}>
       <Link to="/" className="flex items-center">
-        <span className="text-primary-500">CMC</span>
-        <span className="text-accent-700">ampus</span>
+        <img src={LogoImg} alt="Logo" className='w-64 h-auto object-contain -my-9 lg:-my-12' />
       </Link>
     </h1>
   );
