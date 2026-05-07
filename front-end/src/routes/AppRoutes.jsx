@@ -6,7 +6,8 @@ import Home from "../pages/Home";
 import Blogs from "../pages/Blogs";
 import BlogDetails from "../pages/BlogDetails";
 import About from "../pages/About";
-import Lessons from "../pages/Lessons";
+// import Lessons from "../pages/Lessons";
+import Courses from "../pages/Courses";
 import Contact from "../pages/Contact";
 import Filieres from "../pages/Filieres";
 
@@ -22,7 +23,7 @@ export default function AppRoutes() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogDetails />} />
         <Route path="/about" element={<About />} />
-        <Route path="/lessons" element={<Lessons />} />
+        <Route path="/courses" element={<Courses />} />
         <Route path="/filieres" element={<Filieres />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
