@@ -30,14 +30,13 @@ export default function FilieresGrid({filieres}){
       {/* Rating */}
       <div className="mt-4 flex items-center gap-2">
 
-        <span className="text-sm text-gray-600">
+        <span className="text-sm text-gray-600 line-clamp-4">
           {filiere.description}
         </span>
       </div>
 
       {/* Bottom */}
       <div className="mt-6 flex items-center justify-between">
-        
         <Link to={`/filieres/${filiere.slug || filiere.id}`}>
         <button className="rounded-full bg-[#1f1f1f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#004755]">
           Learn More

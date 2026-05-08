@@ -1,7 +1,7 @@
 import { ArrowRight, BookOpen, Clock3, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function SingleCour({ img, title, description, filiere, pole, year, duration, link, slug, index }) {
+export default function SingleCour({ img, title, description, filiere, pole, year, duration, slug, index }) {
   return (
     <article
       className="group overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl animate-fadeInUp opacity-0"
@@ -58,7 +58,7 @@ export default function SingleCour({ img, title, description, filiere, pole, yea
         </div>
 
         <Link
-          to={link || `#`}
+          to={slug ? `/courses/${slug}` : `#`}
           className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-secondary-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-secondary-800"
         >
           View course
