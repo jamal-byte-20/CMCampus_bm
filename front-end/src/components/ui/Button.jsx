@@ -17,6 +17,7 @@ const Button = ({ children, variant = 'primary', className, fullWidth = false, .
   
   const variants = {
     primary: "bg-brand text-text-inverse hover:bg-brand-hover shadow-soft",
+    secondary: "bg-secondary-400 text-white hover:scale-99",
     outline: "border border-border text-text-primary hover:bg-bg-secondary",
     ghost: "text-brand hover:underline"
   };
