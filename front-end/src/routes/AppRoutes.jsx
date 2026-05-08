@@ -7,11 +7,13 @@ import Blogs from "../pages/Blogs";
 import BlogDetails from "../pages/BlogDetails";
 import About from "../pages/About";
 import Courses from "../pages/Courses";
+import CoursesDetails from "../pages/CoursesDetails";
 import Contact from "../pages/Contact";
 import Filieres from "../pages/Filieres";
 
 import SignIn from "../pages/auth/SignIn";
 import ForgotPassword from "../pages/auth/ForgotPassword";
+import FiliereDetails from "../pages/FiliereDetail";
 
 export default function AppRoutes() {
   return (
@@ -23,7 +25,9 @@ export default function AppRoutes() {
         <Route path="/blogs/:id" element={<BlogDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<CoursesDetails />} />
         <Route path="/filieres" element={<Filieres />} />
+        <Route path="/filieres/:id" element={<FiliereDetails/>}/>
         <Route path="/contact" element={<Contact />} />
       </Route>
 

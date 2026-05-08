@@ -7,7 +7,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="bg-[var(--color-bg-dark)] py-20">
+    <section className="bg-primary-400 py-20">
       <div className="max-w-7xl mx-auto px-6 text-center text-white">
         
         {/* Title */}
@@ -24,13 +24,13 @@ export default function Stats() {
           {stats.map((item) => (
             <div
               key={item.label}
-              className="bg-white/10 rounded-3xl p-8 backdrop-blur transition hover:bg-white/20"
+              className="bg-white rounded-3xl p-8 backdrop-blur transition hover:bg-white"
             >
-              <h3 className="text-4xl font-bold text-red-400">
+              <h3 className="text-4xl font-bold text-secondary-700">
                 {item.number}
               </h3>
 
-              <p className="mt-2 text-gray-300 text-sm">
+              <p className="mt-2 text-secondary-300 text-sm">
                 {item.label}
               </p>
             </div>

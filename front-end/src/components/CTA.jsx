@@ -24,14 +24,14 @@ export default function FinalCTA() {
           
           <a
             href="/filieres"
-            className="rounded-xl bg-[var(--color-bg-dark)] px-7 py-3 font-semibold text-red-400 transition hover:bg-black"
+            className="rounded-xl bg-primary-100 px-7 py-3 font-semibold text-secondary-400 transition hover:bg-white hover:text-black hover:scale-97 hover:border-1"
           >
             Explore Filières
           </a>
 
           <a
             href="/contact"
-            className="rounded-xl border border-white px-7 py-3 font-semibold transition hover:bg-white hover:text-red-500"
+            className="rounded-xl border border-white px-7 py-3 font-semibold transition hover:bg-white hover:text-secondary-500"
           >
             Contact Us
           </a>
