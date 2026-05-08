@@ -5,89 +5,11 @@ import { ArrowRight, Sparkles, Layers, BookOpen } from "lucide-react";
 import SingleCour from "../components/SingleCour";
 import CourFilter from "../components/CourFilter";
 import CoursesHero from "../components/CoursesHero";
-
-const modules = [
-  {
-    id: 1,
-    slug: "html-css-fundamentals",
-    title: "HTML & CSS Fundamentals",
-    img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
-    pole: "Digital & IA",
-    filiere: "Développement Digital",
-    year: "First Year",
-    duration: "60h",
-    link: "/courses/html-css-fundamentals",
-    description:
-      "Learn the basics of web pages structure, styling, responsive layouts and modern CSS.",
-  },
-  {
-    id: 2,
-    slug: "javascript-basics",
-    title: "JavaScript Basics",
-    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
-    pole: "Digital & IA",
-    filiere: "Développement Digital",
-    year: "First Year",
-    duration: "80h",
-    link: "/courses/javascript-basics",
-    description:
-      "Understand programming logic, DOM manipulation, events and dynamic web interfaces.",
-  },
-  {
-    id: 3,
-    slug: "php-mysql",
-    title: "PHP & MySQL",
-    img: "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1200&auto=format&fit=crop",
-    pole: "Digital & IA",
-    filiere: "Développement Digital",
-    year: "Second Year",
-    duration: "100h",
-    link: "/courses/php-mysql",
-    description:
-      "Build dynamic web applications using PHP and MySQL database management.",
-  },
-  {
-    id: 4,
-    slug: "network-fundamentals",
-    title: "Network Fundamentals",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
-    pole: "Digital & IA",
-    filiere: "Infrastructure Digitale",
-    year: "First Year",
-    duration: "70h",
-    link: "/courses/network-fundamentals",
-    description:
-      "Discover computer networks, IP addressing, routing basics and network devices.",
-  },
-  {
-    id: 5,
-    slug: "business-management",
-    title: "Business Management",
-    img: "https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=1200&auto=format&fit=crop",
-    pole: "Gestion & Commerce",
-    filiere: "Gestion des Entreprises",
-    year: "First Year",
-    duration: "60h",
-    link: "/courses/business-management",
-    description:
-      "Learn business organization, administration methods and management principles.",
-  },
-  {
-    id: 6,
-    slug: "marketing-sales",
-    title: "Marketing & Sales",
-    img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop",
-    pole: "Gestion & Commerce",
-    filiere: "Commerce",
-    year: "Second Year",
-    duration: "50h",
-    link: "/courses/marketing-sales",
-    description:
-      "Understand customer relations, sales techniques and marketing fundamentals.",
-  },
-];
+import { useSelector } from "react-redux";
 
 export default function Courses() {
+  const modules = useSelector((state) => state.courses.courses)
+
   const [search, setSearch] = useState("");
   const [selectedPole, setSelectedPole] = useState("All");
   const [selectedFiliere, setSelectedFiliere] = useState("All");
@@ -194,7 +116,7 @@ export default function Courses() {
                 <SingleCour
                   key={el.id}
                   index={index}
-                  img={el.img}
+                  img={el.image}
                   title={el.title}
                   pole={el.pole}
                   filiere={el.filiere}
@@ -202,7 +124,6 @@ export default function Courses() {
                   duration={el.duration}
                   description={el.description}
                   slug={el.slug}
-                  link={el.link}
                 />
               ))}
             </section>
