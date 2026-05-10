@@ -52,7 +52,7 @@ const SignIn = () => {
           </Link>
         </div>
 
-        <Button type="submit" fullWidth>
+        <Button type="submit" fullWidth className='rounded-full my-4'>
           Login 
           <ChevronRight size={20} />
         </Button>

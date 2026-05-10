@@ -39,7 +39,7 @@ export default function Contact() {
           {contactDetails.map((item) => (
             <div 
               key={item.id} 
-              className="flex items-center gap-5 p-8 border border-neutral-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-700"
+              className="flex items-center gap-5 p-8 border border-neutral-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               {/* Icon Box */}
               <div className="flex-shrink-0 w-16 h-16 bg-secondary-700 rounded-2xl flex items-center justify-center shadow-lg shadow-secondary-300/40">
@@ -173,7 +173,7 @@ export default function Contact() {
         <div className="relative w-full h-[300px] sm:h-[450px] rounded-2xl sm:rounded-[30px] overflow-hidden shadow-lg border border-neutral-200">
           
           {/* Grayscale Map Wrapper */}
-          <div className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out bg-neutral-100">
+          <div className="w-full h-full grayscale hover:grayscale-0 transition-all duration-300 ease-in-out bg-neutral-100">
             <iframe
               title="Beni Mellal Location Map"
               width="100%"

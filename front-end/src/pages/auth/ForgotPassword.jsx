@@ -25,7 +25,7 @@ const ForgotPassword = () => {
           required
         />
 
-        <Button type="submit" fullWidth className="mt-8">
+        <Button type="submit" fullWidth className="rounded-full mt-8">
           Send Reset Link 
           <ChevronRight size={20} />
         </Button>

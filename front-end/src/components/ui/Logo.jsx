@@ -95,7 +95,7 @@ export default function Logo({
       onClick={onClick}
       aria-label={`Go to ${text} homepage`}
       className={cn(
-        "group flex items-center gap-2 shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-lg transition-opacity duration-700 hover:opacity-90",
+        "group flex items-center gap-2 shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-lg transition-opacity duration-300 hover:opacity-90",
         wrapperSizeMap[size],
         className
       )}
@@ -108,7 +108,7 @@ export default function Logo({
               src={LogoImg}
               alt={showText ? "Logo Icon" : `${text} Logo`}
               className={cn(
-                "w-full h-auto object-contain transform transition-transform duration-700 group-hover:scale-105",
+                "w-full h-auto object-contain transform transition-transform duration-300 group-hover:scale-105",
                 // Proportional trim scales dynamically with width instead of breaking at breakpoints!
                 trimWhitespace && "", 
                 iconClassName
@@ -118,7 +118,7 @@ export default function Logo({
             <BookOpen
               size={iconSizeMap[size]}
               className={cn(
-                "transition-transform duration-700 group-hover:scale-110",
+                "transition-transform duration-300 group-hover:scale-110",
                 iconVariantMap[variant],
                 iconClassName
               )}
