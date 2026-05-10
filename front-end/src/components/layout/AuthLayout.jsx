@@ -26,9 +26,9 @@ const AuthLayout = () => {
           
           {/* Welcome Text */}
           <h2 className="text-3xl font-bold text-text-primary mb-4">
-            Welcome to <br />
-            <span className="text-primary-500">CMC</span>
-            <span className="text-accent-700">ampus</span> Platform
+            Welcome to 
+          <Logo className='w-40 sm:w-50 mx-auto my-2'/>
+             Platform
           </h2>
           <p className="text-text-secondary leading-relaxed mb-8">
             Platform designed to help organizations, educators, and learners manage, deliver, and track learning and training activities.

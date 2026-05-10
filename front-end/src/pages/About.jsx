@@ -137,95 +137,91 @@ export default function About() {
     <>
       <PageHeader title="About Us" />
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 font-sans">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Left Side: Image with Decorative Borders */}
-          <div className="relative flex justify-center lg:justify-start">
-            {/* Decorative Border (Top Left) */}
-            <div className="absolute -top-8 -left-10 w-48 h-48 md:w-64 md:h-64 border-[12px] border-secondary-700 rounded-tl-[60px] rounded-br-[60px] -z-10 hidden md:block"></div>
+      <section className='bg-bg-secondary'>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 font-sans">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
-            {/* Decorative Border (Bottom Right) */}
-            <div className="absolute -bottom-8 left-40 md:left-60 w-48 h-48 md:w-64 md:h-64 border-[12px] border-brand rounded-tr-[60px] rounded-bl-[60px] -z-10 hidden md:block"></div>
-
-            {/* Main Image Container */}
-            <div className="relative rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-xl border-4 border-white">
-              <img 
-                src={StagairesImg} 
-                alt="Students learning" 
-                className="w-full h-auto max-w-md object-cover"
-              />
+            {/* Left Side: Image with Decorative Borders */}
+            <div className="relative flex justify-center">
+              {/* Decorative Border (Top Left) */}
+              <div className="absolute -top-8 left-[15%] lg:left-0 w-48 h-48 md:w-64 md:h-64 border-[12px] border-secondary-700 rounded-tl-[60px] rounded-br-[60px] z-0 hidden md:block"></div>
               
-              {/* Small arrows detail */}
-              <div className="absolute bottom-10 left-4 flex space-x-1">
-                {[...Array(4)].map((_, i) => (
-                  <div key={i} className="w-2 h-4 bg-warning -skew-x-12"></div>
-                ))}
+              {/* Decorative Border (Bottom Right) */}
+              <div className="absolute -bottom-8 right-[15%] lg:right-0  w-48 h-48 md:w-64 md:h-64 border-[12px] border-brand rounded-tr-[60px] rounded-bl-[60px] z-0 hidden md:block"></div>
+
+              {/* Main Image Container */}
+              <div className="relative rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-xl border-border">
+                <img 
+                  src={StagairesImg} 
+                  alt="Students learning" 
+                  className="w-full h-auto max-w-md object-cover"
+                />
               </div>
             </div>
+
+            {/* Right Side: Content */}
+            <div className="space-y-6">
+              <div className="inline-block">
+                <span className="text-brand font-semibold border-b-2 border-brand pb-1">About</span>
+              </div>
+              
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 leading-tight">
+                Empowering Learning, Inspiring Growth
+              </h2>
+              
+              <p className="text-neutral-500 leading-relaxed">
+                At DreamsLMS, we make education accessible to all with interactive courses and expert-led content. 
+                Learn anytime, anywhere, and achieve your goals seamlessly.
+              </p>
+
+              <div className="space-y-8 mt-8">
+                {/* Feature 1 */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-secondary-100 rounded-lg flex items-center justify-center">
+                    <BookOpen className="text-secondary-700 w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral-900">Learn from anywhere</h3>
+                    <p className="text-neutral-500 text-sm mt-1 leading-relaxed">
+                      Learning from anywhere has become a transform aspect of modern education, allowing individuals.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Feature 2 */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <Award className="text-brand w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral-900">Expert Mentors</h3>
+                    <p className="text-neutral-500 text-sm mt-1 leading-relaxed">
+                      Expert mentors are invaluable assets in any field, providing seasoned guidance knowledge.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-
-          {/* Right Side: Content */}
-          <div className="space-y-6">
-            <div className="inline-block">
-              <span className="text-brand font-semibold border-b-2 border-brand pb-1">About</span>
-            </div>
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 leading-tight">
-              Empowering Learning, Inspiring Growth
-            </h2>
-            
-            <p className="text-neutral-500 leading-relaxed">
-              At DreamsLMS, we make education accessible to all with interactive courses and expert-led content. 
-              Learn anytime, anywhere, and achieve your goals seamlessly.
-            </p>
-
-            <div className="space-y-8 mt-8">
-              {/* Feature 1 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-14 h-14 bg-secondary-100 rounded-lg flex items-center justify-center">
-                  <BookOpen className="text-secondary-700 w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-neutral-900">Learn from anywhere</h3>
-                  <p className="text-neutral-500 text-sm mt-1 leading-relaxed">
-                    Learning from anywhere has become a transform aspect of modern education, allowing individuals.
-                  </p>
-                </div>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-14 h-14 bg-primary-100 rounded-lg flex items-center justify-center">
-                  <Award className="text-brand w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-neutral-900">Expert Mentors</h3>
-                  <p className="text-neutral-500 text-sm mt-1 leading-relaxed">
-                    Expert mentors are invaluable assets in any field, providing seasoned guidance knowledge.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto font-sans">
+      <section>
+        <div className="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto font-sans">
         
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-brand font-semibold border-b-2 border-brand pb-1 inline-block">
-            Our Benefits
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight">
-            Master the Skills to Drive your Career
-          </h2>
-          <p className="text-neutral-500 text-lg">
-            The right course, guided by an expert mentor, can provide invaluable insights, practical skills.
-          </p>
-        </div>
+          {/* Header Section */}
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="text-brand font-semibold border-b-2 border-brand pb-1 inline-block">
+              Our Benefits
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 tracking-tight">
+              Master the Skills to Drive your Career
+            </h2>
+            <p className="text-neutral-500 text-lg">
+              The right course, guided by an expert mentor, can provide invaluable insights, practical skills.
+            </p>
+          </div>
 
         {/* Cards Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-24">
@@ -274,9 +270,11 @@ export default function About() {
             </div>
         </div>
 
+        </div>
       </section>
 
-      <section className="relative py-16 md:py-24 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-neutral-50/50 to-primary-50/30 font-sans">
+      <section className='bg-bg-secondary'>
+        <div className="relative py-16 md:py-24 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-neutral-50/50 to-primary-50/30 font-sans">
         
         {/* Decorative Faded Background Circles */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -368,9 +366,11 @@ export default function About() {
           </Swiper>
 
         </div>
+        </div>
       </section>
-
-      <section className="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto font-sans">
+    
+      <section>
+        <div className="py-12 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto font-sans">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           
           {/* Left Side: Image with Bubble Overlay */}
@@ -424,6 +424,7 @@ export default function About() {
             </div>
           </div>
 
+        </div>
         </div>
       </section>
     </>
