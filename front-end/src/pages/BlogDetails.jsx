@@ -32,9 +32,22 @@ const ReplyIcon = ({ className = '' }) => (
 );
 
 /* ─── Reusable CommentCard ────────────────────────────────────── */
-function CommentCard({ comment, isNested = false }) {
+function CommentCard({ comment, isNested = false, onReply, onReaction }) {
+  const [isReplying, setIsReplying] = useState(false);
+  const [replyText, setReplyText] = useState('');
+
+  const submitReply = () => {
+    if (replyText.trim()) {
+      onReply(comment.id, replyText.trim());
+      setIsReplying(false);
+      setReplyText('');
+    }
+  };
+
+  const userReaction = comment.userReaction || null;
+
   return (
-    <div className={`${isNested ? 'bg-gray-50 rounded-lg p-4 sm:p-5 mt-5' : 'bg-white rounded-xl border border-gray-200 p-5 sm:p-6'}`}>
+    <div className={`${isNested ? 'bg-gray-50 rounded-lg p-4 sm:p-5 mt-5 border border-gray-100' : 'bg-white rounded-xl border border-gray-200 p-5 sm:p-6 shadow-sm'}`}>
       {/* Header: Avatar + Name/Date … Reply */}
       <div className="flex justify-between items-start">
         <div className="flex items-center gap-3">
@@ -55,7 +68,8 @@ function CommentCard({ comment, isNested = false }) {
 
         <button
           type="button"
-          className="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700 transition-colors flex-shrink-0"
+          onClick={() => setIsReplying(!isReplying)}
+          className={`flex items-center gap-1 text-sm transition-colors cursor-pointer flex-shrink-0 ${isReplying ? 'text-brand' : 'text-gray-500 hover:text-brand'}`}
         >
           <ReplyIcon className="w-4 h-4" />
           Reply
@@ -63,31 +77,84 @@ function CommentCard({ comment, isNested = false }) {
       </div>
 
       {/* Comment body */}
-      <p className="text-gray-600 text-sm sm:text-base leading-relaxed my-4">
+      <p className="text-gray-700 text-sm sm:text-base leading-relaxed my-4">
         {comment.text}
       </p>
 
       {/* Engagement footer */}
-      <div className="flex items-center gap-4 text-sm font-medium text-gray-600">
-        <span className="flex items-center gap-1">
+      <div className="flex items-center gap-4 text-sm font-medium">
+        <button
+          onClick={() => onReaction(comment.id, 'like')}
+          className={`flex items-center gap-1.5 transition-colors cursor-pointer ${userReaction === 'like' ? 'text-brand' : 'text-gray-500 hover:text-brand'}`}
+        >
           <ThumbUpIcon className="w-4 h-4" />
           {comment.likes}
-        </span>
-        <span className="flex items-center gap-1">
+        </button>
+        <button
+          onClick={() => onReaction(comment.id, 'dislike')}
+          className={`flex items-center gap-1.5 transition-colors cursor-pointer${userReaction === 'dislike' ? 'text-brand' : 'text-gray-500 hover:text-brand'}`}
+        >
           <ThumbDownIcon className="w-4 h-4" />
           {comment.dislikes}
-        </span>
-        <span className="flex items-center gap-1 text-red-500">
+        </button>
+        <button
+          onClick={() => onReaction(comment.id, 'heart')}
+          className={`flex items-center gap-1.5 transition-colors cursor-pointer ${userReaction === 'heart' ? 'text-red-500' : 'text-gray-500 hover:text-red-500'}`}
+        >
           <HeartIcon className="w-4 h-4" />
           {comment.hearts}
-        </span>
+        </button>
       </div>
+
+      {/* Reply input */}
+      {isReplying && (
+        <div className="mt-5 flex items-start gap-3">
+          <img
+            src={`https://i.pravatar.cc/150?u=reply_${comment.id}`}
+            alt="You"
+            className="w-8 h-8 rounded-full object-cover flex-shrink-0 mt-1"
+          />
+          <div className="flex-1">
+            <textarea
+              rows={2}
+              value={replyText}
+              onChange={(e) => setReplyText(e.target.value)}
+              placeholder="Write a reply..."
+              className="w-full bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand transition-all resize-none shadow-sm"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  submitReply();
+                }
+              }}
+            />
+            <div className="flex justify-end gap-2 mt-2">
+              <button
+                onClick={() => {
+                  setIsReplying(false);
+                  setReplyText('');
+                }}
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={submitReply}
+                disabled={!replyText.trim()}
+                className="px-4 py-2 text-sm font-medium bg-brand text-white rounded-lg hover:bg-brand-hover disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm"
+              >
+                Reply
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Nested replies */}
       {comment.replies && comment.replies.length > 0 && (
-        <div>
+        <div className="mt-4 border-l-2 border-gray-200 pl-4 sm:pl-6 ml-2 sm:ml-3">
           {comment.replies.map((reply) => (
-            <CommentCard key={reply.id} comment={reply} isNested />
+            <CommentCard key={reply.id} comment={reply} isNested onReply={onReply} onReaction={onReaction} />
           ))}
         </div>
       )}
@@ -169,6 +236,68 @@ export default function BlogDetails() {
     setForm((prev) => ({ ...prev, [name]: value }));
     // Clear individual error on change
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: undefined }));
+  }
+
+  function handleReaction(commentId, reactionType) {
+    setComments((prev) => {
+      const updateComments = (list) => {
+        return list.map((c) => {
+          if (c.id === commentId) {
+            let { likes, dislikes, hearts, userReaction } = c;
+            userReaction = userReaction || null;
+
+            if (userReaction === reactionType) {
+              if (reactionType === 'like') likes--;
+              if (reactionType === 'dislike') dislikes--;
+              if (reactionType === 'heart') hearts--;
+              userReaction = null;
+            } else {
+              if (userReaction === 'like') likes--;
+              if (userReaction === 'dislike') dislikes--;
+              if (userReaction === 'heart') hearts--;
+
+              if (reactionType === 'like') likes++;
+              if (reactionType === 'dislike') dislikes++;
+              if (reactionType === 'heart') hearts++;
+              userReaction = reactionType;
+            }
+
+            return { ...c, likes, dislikes, hearts, userReaction };
+          } else if (c.replies && c.replies.length > 0) {
+            return { ...c, replies: updateComments(c.replies) };
+          }
+          return c;
+        });
+      };
+      return updateComments(prev);
+    });
+  }
+
+  function handleReply(commentId, replyText) {
+    setComments((prev) => {
+      const updateComments = (list) => {
+        return list.map((c) => {
+          if (c.id === commentId) {
+            const newReply = {
+              id: Date.now(),
+              name: 'Guest User',
+              avatar: `https://i.pravatar.cc/150?u=${Date.now()}`,
+              date: 'Just now',
+              text: replyText,
+              likes: 0,
+              dislikes: 0,
+              hearts: 0,
+              replies: [],
+            };
+            return { ...c, replies: [...(c.replies || []), newReply] };
+          } else if (c.replies && c.replies.length > 0) {
+            return { ...c, replies: updateComments(c.replies) };
+          }
+          return c;
+        });
+      };
+      return updateComments(prev);
+    });
   }
 
   function handleSubmit(e) {
@@ -260,10 +389,10 @@ export default function BlogDetails() {
       </div>
 
       {/* ── Reviews Section ───────────────────────────────────────── */}
-      <section className="max-w-4xl mx-auto px-6 sm:px-8 py-10 sm:py-12 font-sans border border-neutral-200 rounded-2xl bg-white mb-10">
+      <section className="max-w-4xl mx-auto px-6 sm:px-8 py-10 sm:py-12 font-sans border border-gray-200 rounded-2xl bg-white mb-10 shadow-sm">
         <div className="flex items-center gap-3 mb-8">
           <MessageCircle className="w-6 h-6 text-brand" />
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
             Reviews ({comments.length})
           </h2>
         </div>
@@ -278,7 +407,7 @@ export default function BlogDetails() {
                 comment.id === justAdded ? 'animate-fade-in' : ''
               }`}
             >
-              <CommentCard comment={comment} />
+              <CommentCard comment={comment} onReply={handleReply} onReaction={handleReaction} />
             </div>
           ))}
         </div>
@@ -290,8 +419,8 @@ export default function BlogDetails() {
       </div>
 
       {/* ── Leave a Comment Form ──────────────────────────────────── */}
-      <section className="max-w-4xl mx-auto px-6 sm:px-8 py-10 sm:py-12 font-sans border border-neutral-200 rounded-2xl bg-white mb-16">
-        <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-8">
+      <section className="max-w-4xl mx-auto px-6 sm:px-8 py-10 sm:py-12 font-sans border border-gray-200 rounded-2xl bg-white mb-16 shadow-sm">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-8">
           Leave a Comment
         </h2>
 
@@ -300,7 +429,7 @@ export default function BlogDetails() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Name */}
             <div>
-              <label htmlFor="comment-name" className="block text-sm font-semibold text-neutral-700 mb-2">
+              <label htmlFor="comment-name" className="block text-sm font-semibold text-gray-700 mb-2">
                 Name <span className="text-error">*</span>
               </label>
               <input
@@ -311,10 +440,10 @@ export default function BlogDetails() {
                 onChange={handleChange}
                 placeholder="Your name"
                 className={`
-                  w-full px-4 py-3 rounded-xl border text-neutral-900 placeholder:text-neutral-400
+                  w-full px-4 py-3 rounded-xl border bg-white text-gray-900 placeholder:text-gray-400
                   transition-all duration-200
                   focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand
-                  ${errors.name ? 'border-error ring-1 ring-error/30' : 'border-neutral-200'}
+                  ${errors.name ? 'border-error ring-1 ring-error/30' : 'border-gray-200'}
                 `}
               />
               {errors.name && (
@@ -324,7 +453,7 @@ export default function BlogDetails() {
 
             {/* Email */}
             <div>
-              <label htmlFor="comment-email" className="block text-sm font-semibold text-neutral-700 mb-2">
+              <label htmlFor="comment-email" className="block text-sm font-semibold text-gray-700 mb-2">
                 Email <span className="text-error">*</span>
               </label>
               <input
@@ -335,10 +464,10 @@ export default function BlogDetails() {
                 onChange={handleChange}
                 placeholder="you@example.com"
                 className={`
-                  w-full px-4 py-3 rounded-xl border text-neutral-900 placeholder:text-neutral-400
+                  w-full px-4 py-3 rounded-xl border bg-white text-gray-900 placeholder:text-gray-400
                   transition-all duration-200
                   focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand
-                  ${errors.email ? 'border-error ring-1 ring-error/30' : 'border-neutral-200'}
+                  ${errors.email ? 'border-error ring-1 ring-error/30' : 'border-gray-200'}
                 `}
               />
               {errors.email && (
@@ -350,10 +479,10 @@ export default function BlogDetails() {
           {/* Comment */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label htmlFor="comment-text" className="block text-sm font-semibold text-neutral-700">
+              <label htmlFor="comment-text" className="block text-sm font-semibold text-gray-700">
                 Comment <span className="text-error">*</span>
               </label>
-              <span className={`text-xs ${form.comment.length > COMMENT_MAX_LENGTH ? 'text-error font-semibold' : 'text-neutral-400'}`}>
+              <span className={`text-xs ${form.comment.length > COMMENT_MAX_LENGTH ? 'text-error font-semibold' : 'text-gray-500'}`}>
                 {form.comment.length}/{COMMENT_MAX_LENGTH}
               </span>
             </div>
@@ -365,10 +494,10 @@ export default function BlogDetails() {
               onChange={handleChange}
               placeholder="Write your comment here..."
               className={`
-                w-full px-4 py-3 rounded-xl border text-neutral-900 placeholder:text-neutral-400
+                w-full px-4 py-3 rounded-xl border bg-white text-gray-900 placeholder:text-gray-400
                 resize-none transition-all duration-200
                 focus:outline-none focus:ring-2 focus:ring-brand/40 focus:border-brand
-                ${errors.comment ? 'border-error ring-1 ring-error/30' : 'border-neutral-200'}
+                ${errors.comment ? 'border-error ring-1 ring-error/30' : 'border-gray-200'}
               `}
             />
             {errors.comment && (
@@ -385,8 +514,8 @@ export default function BlogDetails() {
               transition-all duration-700 ease-out
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2
               ${isFormEmpty
-                ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
-                : 'bg-brand text-white hover:bg-brand-hover active:scale-[0.97] shadow-lg shadow-primary-300/40'
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                : 'bg-brand text-white hover:bg-brand-hover active:scale-[0.97] shadow-md shadow-brand/20'
               }
             `}
           >
