@@ -33,7 +33,7 @@ export default function PopularFilieres() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <span className="inline-flex rounded-full bg-red-400 px-4 py-2 text-sm font-bold text-white">
+            <span className="text-brand font-semibold border-b-2 border-brand pb-1">
               Our Filières
             </span>
 
@@ -49,7 +49,7 @@ export default function PopularFilieres() {
 
           <a
             href="/filieres"
-            className="w-fit rounded-xl bg-[var(--color-bg-dark)] px-6 py-3 font-semibold text-white transition hover:bg-[var(--color-secondary-700)]"
+            className="w-fit rounded-xl bg-secondary-500 px-6 py-3 font-semibold text-white transition hover:bg-[var(--color-secondary-700)]"
           >
             View All Filières
           </a>
@@ -77,7 +77,7 @@ export default function PopularFilieres() {
                 {filiere.description}
               </p>
 
-              <button className="mt-6 font-semibold text-red-400 group-hover:underline">
+              <button className="mt-6 font-semibold text-secondary-400 group-hover:underline">
                 Learn More →
               </button>
             </article>

@@ -9,7 +9,7 @@ export default function NavItem({ item }) {
       to={item.path}
       role="menuitem"
       className={`
-        px-4 py-2 rounded-lg transition-colors duration-200
+        px-4 py-2  transition-colors duration-200
         hover:text-primary-500
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500
         ${isCurrentPath ? 'text-primary-500 border-b-3 border-primary-500' : 'text-neutral-900'}

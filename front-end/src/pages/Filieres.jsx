@@ -1,34 +1,14 @@
 import { Link } from "react-router-dom";
-import FilieresFilter from "../components/FilieresFilter";
-import FilieresHero from "../components/FilieresHero";
-import FilieresGrid from "../components/FilieresGrid";
+import FilieresFilter from "../components/filierePage/FilieresFilter";
+import FilieresHero from "../components/filierePage/FilieresHero";
+import FilieresGrid from "../components/filierePage/FilieresGrid";
 import { useState,useMemo } from "react";
+import { useSelector } from "react-redux";
 
-const filieres = [
-  {
-    id: 1,
-    title: "Developpement Digital",
-    pole: "Digital & IA",
-    description: "Learn web development, programming and modern digital tools.",
-    image: "/images/digital.jpg",
-  },
-  {
-    id: 2,
-    title: "Infrastructure Digitale",
-    pole: "Digital & IA",
-    description: "Learn networking, systems and IT infrastructure.",
-    image: "/images/network.jpg",
-  },
-  {
-    id: 3,
-    title: "Gestion des Entreprises",
-    pole: "Gestion & Commerce",
-    description: "Develop business, management and administration skills.",
-    image: "/images/gestion.jpg",
-  },
-];
+
 
 export default function Filieres(){
+  const filieres = useSelector((state)=> state.filieres.filieres);
   const [filtered, setFiltered] = useState([])
   const [search, setSearch] = useState("");
   const [selectedPole, setSelectedPole] = useState("All");
@@ -49,7 +29,7 @@ export default function Filieres(){
 
 
 
-  return <main className="w-full px-3 ">
+  return <main className="w-full">
   <FilieresHero/>
   <FilieresFilter poles={poles} setSelectedPole={setSelectedPole} selectedPole={selectedPole} setSearch={setSearch} search={search}/>
   <FilieresGrid filieres={filteredF}/>
