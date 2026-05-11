@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Etudiant from "../../static/pictures/etudiant.png";
-import Wave from "../../static/pictures/wave.png";
-import HeorCourseImg from "../../static/pictures/hero-1.png"
+import Etudiant from '../../../static/pictures/etudiant.png'
+import Wave from "../../../static/pictures/wave.png";
+import HeorCourseImg from "../../../static/pictures/hero-1.png"
 
 export default function CoursesHero() {
   return (
@@ -13,7 +13,7 @@ export default function CoursesHero() {
       />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-6 py-20 md:flex-row md:items-center md:justify-between">
         <div className="max-w-3xl space-y-8 animate-fadeInLeft">
-          <span className="inline-flex rounded-full bg-primary-500 px-4 py-2 text-sm font-semibold uppercase tracking-[0.28em] text-white shadow-lg shadow-primary-500/20 mt-5">
+          <span className="inline-flex rounded-full bg-primary-400 px-4 py-2 text-sm font-semibold backdrop-blur text-white absolute md:relative top-5 left-[20%] md:left-1 animate-fadeInLeft">
             CMC Beni Mellal • OFPPT
           </span>
           <h1 className="text-4xl font-bold leading-tight text-slate-950 sm:text-5xl md:text-5xl md:mt-10">
@@ -25,7 +25,7 @@ export default function CoursesHero() {
 
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/courses"
+              to="/courses/#courgrid"
               className="inline-flex items-center justify-center rounded-xl bg-secondary-600 px-8 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-secondary-700"
             >
               Browse modules

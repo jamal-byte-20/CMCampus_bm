@@ -2,9 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { ArrowRight, Sparkles, Layers, BookOpen } from "lucide-react";
-import SingleCour from "../components/SingleCour";
-import CourFilter from "../components/CourFilter";
-import CoursesHero from "../components/CoursesHero";
+import SingleCour from "../components/coursPage/SingleCour";
+import CourFilter from "../components/coursPage/CourFilter";
+import CoursesHero from "../components/coursPage/CoursesHero";
 import { useSelector } from "react-redux";
 
 export default function Courses() {
@@ -111,7 +111,7 @@ export default function Courses() {
               <p className="mt-2 text-sm text-neutral-500">Try broadening your search or selecting another pole.</p>
             </div>
           ) : (
-            <section className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <section className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" id="courgrid">
               {filteredModules.map((el, index) => (
                 <SingleCour
                   key={el.id}

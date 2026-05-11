@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Button from "./ui/Button";
-import StudentIMG from "../../static/pictures/cmc-hero.png"
+import Button from "../ui/Button";
+import StudentIMG from "../../../static/pictures/cmc-hero.png"
 
 export default function Hero(){
     return <section className="min-h-screen flex items-center mt-0 md:mt-25">

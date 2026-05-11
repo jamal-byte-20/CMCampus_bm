@@ -6,6 +6,7 @@ export default function FilieresGrid({filieres}){
     <article className="w-[350px] rounded-2xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-x  hover:border-gray-700">
       
       {/* Image */}
+      <Link to={`/filieres/${filiere.slug || filiere.id}`}>
       <div className="relative overflow-hidden rounded-2xl">
         <img
           src={filiere.image}
@@ -44,6 +45,7 @@ export default function FilieresGrid({filieres}){
         </Link>
 
       </div>
+      </Link>
     </article>
   ))}
 </section>

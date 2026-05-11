@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import FilieresFilter from "../components/FilieresFilter";
-import FilieresHero from "../components/FilieresHero";
-import FilieresGrid from "../components/FilieresGrid";
+import FilieresFilter from "../components/filierePage/FilieresFilter";
+import FilieresHero from "../components/filierePage/FilieresHero";
+import FilieresGrid from "../components/filierePage/FilieresGrid";
 import { useState,useMemo } from "react";
 import { useSelector } from "react-redux";
 
@@ -29,7 +29,7 @@ export default function Filieres(){
 
 
 
-  return <main className="w-full px-3 ">
+  return <main className="w-full">
   <FilieresHero/>
   <FilieresFilter poles={poles} setSelectedPole={setSelectedPole} selectedPole={selectedPole} setSearch={setSearch} search={search}/>
   <FilieresGrid filieres={filteredF}/>

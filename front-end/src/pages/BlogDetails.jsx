@@ -57,7 +57,7 @@ function CommentCard({ comment, isNested = false, onReply, onReaction }) {
             className="w-10 h-10 rounded-full object-cover flex-shrink-0"
           />
           <div>
-            <h4 className="text-sm sm:text-base font-semibold text-gray-900 leading-tight">
+            <h4 className=  "text-sm sm:text-base font-semibold text-gray-900 leading-tight">
               {comment.name}
             </h4>
             <span className="text-xs sm:text-sm text-gray-500">
@@ -167,9 +167,9 @@ const COMMENT_MAX_LENGTH = 500;
 
 /* ─── Component ──────────────────────────────────────────────────── */
 export default function BlogDetails() {
-  
+
   const blogPosts = useSelector((state)=> state.blogs.blogs)
-  
+
 
 
   const { id } = useParams();

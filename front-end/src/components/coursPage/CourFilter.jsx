@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Input from "./ui/Input"
+import Input from "../ui/Input"
 
 export default function CourFilter({setSearch,search,handlePoleChange,selectedPole,poles,selectedFiliere,filieres,selectedYear,setSelectedYear,years,handleFiliereChange}){
     return <>{/* Filters */}
