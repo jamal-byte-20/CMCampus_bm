@@ -31,14 +31,14 @@ export default function WhyUs() {
   return (
     <section className="relative overflow-hidden ">
       {/* background shapes */}
-      <div className="absolute left-0 top-20 h-48 w-48 rounded-full bg-[#00A7C7]/10 blur-3xl" ></div>
-      <div className="absolute right-0 bottom-20 h-56 w-56 rounded-full bg-[#005F73]/10 blur-3xl" ></div>
+      <div className="absolute left-0 top-20 h-48 w-48 rounded-full bg-[#00A7C7]/10 blur-3xl" />
+      <div className="absolute right-0 bottom-20 h-56 w-56 rounded-full bg-[#005F73]/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           {/* left content */}
           <div>
-            <span className="text-brand font-semibold border-b-2 border-brand pb-1">
+            <span className="inline-flex rounded-full bg-red-400 px-4 py-2 text-sm font-bold text-white">
               Why Choose CMC?
             </span>
 
@@ -58,7 +58,7 @@ export default function WhyUs() {
                   key={item.title}
                   className="group rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#00A7C7]/10 text-3xl transition group-hover:bg-accent-300">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#00A7C7]/10 text-3xl transition group-hover:bg-[var(--color-bg-dark)]">
                     <span className="group-hover:scale-110 transition">
                       {item.icon}
                     </span>
@@ -77,11 +77,11 @@ export default function WhyUs() {
           </div>
 
           {/* right visual */}
-          <div className="relative w-full">
+          <div className="relative">
             <div className="rounded-[2rem]  p-6">
               <div className="rounded-[2rem] bg-white p-6 shadow-2xl">
-                <div className="rounded-3xl bg-primary-600 p-8 text-white">
-                  <p className="text-sm font-semibold text-black bg-gray-100 text-center py-3 rounded-full w-1/2 md:wd-1/3">
+                <div className="rounded-3xl bg-[var(--color-bg-dark)] p-8 text-white">
+                  <p className="text-sm font-semibold text-red-400">
                     CMC Beni Mellal
                   </p>
 
