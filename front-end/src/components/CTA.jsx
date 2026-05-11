@@ -2,6 +2,10 @@ export default function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-24 text-black">
       
+      {/* Background shapes */}
+      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         
         {/* Title */}
@@ -20,14 +24,14 @@ export default function FinalCTA() {
           
           <a
             href="/filieres"
-            className="rounded-xl bg-primary-100 px-7 py-3 font-semibold text-secondary-400 transition hover:bg-white hover:text-black hover:scale-97 hover:border-1"
+            className="rounded-xl bg-[var(--color-bg-dark)] px-7 py-3 font-semibold text-red-400 transition hover:bg-black"
           >
             Explore Filières
           </a>
 
           <a
             href="/contact"
-            className="rounded-xl border border-white px-7 py-3 font-semibold transition hover:bg-white hover:text-secondary-500"
+            className="rounded-xl border border-white px-7 py-3 font-semibold transition hover:bg-white hover:text-red-500"
           >
             Contact Us
           </a>
